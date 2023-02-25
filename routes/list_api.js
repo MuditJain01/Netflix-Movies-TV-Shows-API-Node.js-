@@ -26,8 +26,8 @@ router.get('/', async (req, res) => {
       queries.release_year = { $gte: parseInt(fromReleaseYear), $lte: parseInt(toReleaseYear) };
     }
     if (fromDateAdded && toDateAdded) {
-      const fromDate = new Date(fromDateAdded).getFullYear();
-      const toDate = new Date(toDateAdded).getFullYear();
+      const fromDate = new Date(fromDateAdded);
+      const toDate = new Date(toDateAdded);
       queries.date_added = { $gte: fromDate, $lte: toDate };
     }    
 
